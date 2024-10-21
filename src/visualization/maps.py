@@ -104,8 +104,9 @@ def plot_country_freqs(freqs, map_path, europe=False, dpi=1200, relative=False):
                           legend_kwds={"label":"percentage of population"},
                           cax=cax,
                           cmap = newcmp)
-        
-        plt.savefig(map_path+"_europe.jpg", dpi=dpi)
+
+        plt.tight_layout()  # Adjust padding
+        plt.savefig(map_path+"_europe.jpg", dpi=dpi, bbox_inches="tight")
 
 
 authors = pd.read_pickle("../../data/interim/single_authors_of_taxonomic_articles.pkl")

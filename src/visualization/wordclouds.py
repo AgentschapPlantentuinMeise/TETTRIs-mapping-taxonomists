@@ -33,7 +33,7 @@ def wordcloud_abstracts(df, name):
     plt.axis("off")
     # save wordcloud for this concept
     plt.savefig("../../reports/figures/wordcloud_"+name+".png", format="png", dpi=600, bbox_inches='tight')
-    
+    plt.show()
 
-articles = pd.read_pickle("../../data/processed/european_taxonomic_articles_with_subjects.pkl")
+articles = pd.read_pickle("../../data/processed/taxonomic_articles_with_subjects.pkl")
 wordcloud_abstracts(articles, "european_taxonomic_articles")

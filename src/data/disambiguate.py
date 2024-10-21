@@ -5,7 +5,7 @@ import re
 # PREPROCESSING
 ## AUTHORS
 authors = pd.read_pickle("../../data/interim/country_taxonomic_authors_no_duplicates.pkl")
-print("Number of authors before disambiguation: " + len(authors))
+print("Number of authors before disambiguation: " + str(len(authors)))
 
 # less columns and author ID as index quicken processing
 authors = authors[["author_id", "author_display_name", "author_orcid",
@@ -194,4 +194,4 @@ merged_df.to_csv("../../data/interim/merged_people_truncated.csv")
 true_authors.to_pickle("../../data/processed/authors_disambiguated_truncated.pkl")
 true_authors.to_csv("../../data/processed/authors_disambiguated_truncated.tsv", sep="\t")
 
-print("Number of authors after disambiguation: " + len(true_authors))
+print("Number of authors after disambiguation: " + str(len(true_authors)))
